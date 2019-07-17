@@ -8,6 +8,13 @@
 Input: `Hello, there`
 
 Output: `HELLO, THERE`
+```swift
+var beforeString = "Hello, there"
+
+var outputUppercase = beforeString.uppercased()
+
+print(outputUppercase)
+```
 
 2. **Given a String, return a String alternating between uppercase and lowercase letters**
 
@@ -15,6 +22,19 @@ Output: `HELLO, THERE`
 Input: `Hello, there`
 
 Output: `HeLlO, tHeRe`
+```swift
+var beforeString = "Hello, there"
+var afterString = ""
+for (key,value) in beforeString.enumerated(){
+if key % 2 == 0  {
+afterString.append(value.uppercased())
+}else {
+afterString.append(value)
+}
+
+}
+print(afterString)
+```
 
 
 3. **Given a String, return a String with all occurrences of a given letter removed**
@@ -22,6 +42,19 @@ Output: `HeLlO, tHeRe`
 Input: `Hello, there`
 
 Output: `Hllo, thr`
+```swift
+var beforeString = "Hello, there"
+var skip = "e"
+var anotherString = ""
+for i in beforeString {
+
+if i.lowercased() != skip.lowercased(){
+anotherString.append(i)
+}
+}
+
+print(anotherString)
+```
 
 
 ## Arrays
@@ -33,17 +66,34 @@ Input: `[1,5,2,4,1,4]`
 
 Output: `5`
 
+```swift
+let reduceToFindLargestElement = clusterOfNums.reduce(0, {x, y in
+return x > y ? x : y
+//ternary operator -> condition ? true : false
+
+})
+print(reduceToFindLargestElement)
+```
+
 2. **Given an array of type [Int], return the smallest element**
 
 Input: `[1,5,2,4,1,4]`
 
 Output: `1`
+```swift
+let reduceToFindSmallestElement = clusterOfNums.reduce(0, {x, y in
+return x < y ? x : y
+//ternary operator -> condition ? true : false
+
+})
+print(reduceToFindSmallestElement)
 
 3. **Given an array of type [Int], return its sum**
 
 Input: `[1,5,2,4,1,4]`
 
 Output: `17`
+```
 
 4. **Given an array of type [Double], return its average**
 
@@ -77,6 +127,17 @@ Output: `3`
 Input: `[nil, "We", "come", nil, "in", "peace"]`
 
 Output: `["We", "come", "in", "peace"]`
+```swift
+var input = [nil, "We", "come", nil, "in", "peace"]
+var theArray = [String]()
+for i in input {
+if let check = i {
+theArray.append(check)
+}
+
+}
+print(theArray)
+```
 
 2. **Given an array of type [String?]? return an array of [String] removing all nil values**
 
