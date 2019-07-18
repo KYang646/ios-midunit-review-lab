@@ -199,17 +199,32 @@ Input: `["Never", "trust", "a", "computer", "you", "can't", "throw", "out", "a",
 
 Output: `["Never", "a", "a", "can\'t", "computer", "out", "throw", "trust", "window", "you"]`
 
+```swift
+var daStrings = ["Never", "trust", "a", "computer", "you", "can't", "throw", "out", "a", "window"]
+
+print(daStrings.sorted())
+```
+
 2. **Given an array of type [String], return an array that contains the Strings sorted by length**
 
 Input: `["Never", "trust", "a", "computer", "you", "can't", "throw", "out", "a", "window"]`
 
 Output: `["a", "a", "you", "out", "Never", "trust", "can\'t", "throw", "window", "computer"]`
 
+```swift
+print(thisArray.sorted(by: {$0.count < $1.count}))
+```
+
 3. **Given an array of type [String], return an array containing all Strings at least 4 characters long**
 
 Input: `["Never", "trust", "a", "computer", "you", "can't", "throw", "out", "a", "window"]`
 
 Output: `["Never", "trust", "computer", "can\'t", "throw", "window"]`
+
+```swift
+print(thisArray.sorted(by: {$0.count + 4 < $1.count}))
+THIS IS NOT COMPLETE!
+```
 
 4. **Given an array of type [String], return a String containing all of the Strings from the array combined and separated by spaces.  Do this first without using the `joined(separator:) method`**
 
