@@ -87,12 +87,16 @@ return x < y ? x : y
 
 })
 print(reduceToFindSmallestElement)
-
+```
 3. **Given an array of type [Int], return its sum**
 
 Input: `[1,5,2,4,1,4]`
 
 Output: `17`
+```swift
+var someInput = [1,5,2,4,1,4]
+let total = someInput.reduce(0, +)
+print(total)
 ```
 
 4. **Given an array of type [Double], return its average**
@@ -100,12 +104,28 @@ Output: `17`
 Input: `[3,4.5,7.5,2,1]`
 
 Output: `3.6`
+```swift
+var someInput = [3,4.5,7.5,2,1]
+let total = someInput.reduce(0, +)
+let average = total/Double(someInput.count)
+print(average)
+```
 
 5. **Given an array of type [Double] and a Double, return the sum of all numbers in the array greater than a given number**
 
 Input: `[3,4.5,7.5,2,1], 3`
 
 Output: `12`
+```swift
+var input = [3,4.5,7.5,2,1]
+var sum:Double = 0
+for i in input {
+if i > 3 {
+sum += i
+}
+}
+print(sum)
+```
 
 
 6. **Given an array of type [Double], return the product of all the elements**
@@ -113,12 +133,29 @@ Output: `12`
 Input: `[3,4.5,7.5,2,1]`
 
 Output: `202.5`
+```swift
+var someInput = [3,4.5,7.5,2,1]
+let total = someInput.reduce(1, *)
+print(total)
+```
 
 7. **Given an array of type [Int], return the second smallest value in the array**
 
 Input: `[3,6,1,9,4,8]`
 
 Output: `3`
+```swift
+var someInput = [20,10,1,3,4,0]
+var small = Int.max
+var secondSmall = 0
+for i in someInput {
+if i < small {
+secondSmall = small
+small = i
+}
+}
+print(secondSmall)
+```
 
 ## Optionals
 
@@ -144,6 +181,18 @@ print(theArray)
 Input: `nil`
 
 Output: `[]`
+```swift
+var arrayOPt: [String?]?
+var anotherArray = [String]()
+if let checkA = arrayOPt {
+for i in checkA{
+if let checkB = i {
+anotherArray.append(checkB)
+}
+}
+}
+print(anotherArray)
+```
 
 3. **Given an array of type [Int?] return the sum of all non-nil values.  Use guard statements in your solution.**
 
@@ -151,18 +200,57 @@ Input: `[4, nil, 9, 5, nil]`
 
 Output: `18`
 
+```swift
+var input = [4, nil, 9, 5, nil]
+var sum = 0
+for i in input {
+if let check = i {
+sum += check
+
+}
+}
+print(sum)
+```
+
 4. **Given an array of type [Int?]? return the sum of all non-nil values.  Use guard statements in your solution.**
 
 Input: `nil`
 
 Output: `0`
 
+```swift
+var arrayOPt: [Int?]?
+var sum = 0
+if let checkA = arrayOPt {
+for i in checkA{
+if let checkB = i {
+sum += checkB
+}
+}
+}
+print(sum)
+```
+
 5. **Given an array of type [Int?] and an optional Int, return the sum of all values not equal to the given number.  If the given number is nil, return the sum of all non-nil values.**
 
 Input: `[1, 1, nil, 3, 5, nil, 1, nil, 3, 5, nil, 5, nil, 3], 1`
 
 Output: `24`
+```swift
+var optionalArray = [1, 1, nil, 3, 5, nil, 1, nil, 3, 5, nil, 5, nil, 3]
+var someNum: Int?
+someNum = 1
+var sum = 0
+for i in optionalArray where i != nil{
+if let checkA = i {
+if someNum != checkA {
+sum += checkA
+}
+}
+}
 
+print(sum)
+```
 
 ## Dictionaries
 
